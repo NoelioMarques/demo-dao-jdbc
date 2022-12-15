@@ -1,9 +1,13 @@
 package model.entities;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Departament {
-	private Integer Id; 
+public class Departament implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
+	
+	private Integer id; 
 	private String name;
 	
 	public Departament() {
@@ -11,16 +15,16 @@ public class Departament {
 	}
 	
 	public Departament(Integer id, String name) {
-		Id = id;
+		this.id = id;
 		this.name = name;
 	}
 
 	public Integer getId() {
-		return Id;
+		return id;
 	}
 
 	public void setId(Integer id) {
-		Id = id;
+		id = id;
 	}
 
 	public String getName() {
@@ -33,7 +37,7 @@ public class Departament {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(Id);
+		return Objects.hash(id);
 	}
 
 	@Override
@@ -45,12 +49,12 @@ public class Departament {
 		if (getClass() != obj.getClass())
 			return false;
 		Departament other = (Departament) obj;
-		return Objects.equals(Id, other.Id);
+		return Objects.equals(id, other.id);
 	}
 
 	@Override
 	public String toString() {
-		return "Departament [Id=" + Id + ", name=" + name + "]";
+		return "Departament [Id=" + id + ", name=" + name + "]";
 	} 
 	
 	
